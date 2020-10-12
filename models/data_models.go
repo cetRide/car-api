@@ -7,13 +7,13 @@ import (
 )
 
 type UserInput struct {
-	Username string `json : "username, omitempty"`
-	Email    string `json : "email, omitempty"`
-	Phone    string `json : "phone, omitempty"`
-	Password string `json : "password, omitempty"`
-	Comment  string `json : "comment, omitempty"`
-	Status   string `json : "status, omitempty"`
-	Caption  string `json : "caption, omitempty"`
+	Username string `json : "username,omitempty"`
+	Email    string `json : "email,omitempty"`
+	Phone    string `json : "phone,omitempty"`
+	Password string `json : "password,omitempty"`
+	Comment  string `json : "comment,omitempty"`
+	Status   string `json : "status,omitempty"`
+	Caption  string `json : "caption,omitempty"`
 }
 
 type Token struct {
