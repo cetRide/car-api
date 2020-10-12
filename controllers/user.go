@@ -7,6 +7,7 @@ import (
 	"github.com/cetRide/car-api/models"
 	"github.com/cetRide/car-api/sessions"
 	u "github.com/cetRide/car-api/utils"
+
 	"github.com/gorilla/mux"
 )
 

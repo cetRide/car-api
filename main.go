@@ -7,6 +7,7 @@ import (
 
 	"github.com/cetRide/car-api/models"
 	"github.com/cetRide/car-api/routers"
+
 	"github.com/gorilla/handlers"
 	_ "github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"

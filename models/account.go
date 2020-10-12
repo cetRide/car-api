@@ -7,6 +7,7 @@ import (
 	"github.com/cetRide/car-api/sessions"
 	u "github.com/cetRide/car-api/utils"
 	validation "github.com/cetRide/car-api/validation"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
@@ -119,17 +120,8 @@ func RegisterUser(username, email, password string) map[string]interface{} {
 }
 
 func Follow(follower, following string) map[string]interface{} {
-
-	// temp := &Followings{}
-	// err := GetDB().Table("followings").Where("following_id = ?", follower).First(temp).Error
-	// if err != nil && err != gorm.ErrRecordNotFound {
-	// 	return u.Message(false, "Connection error. Please retry")
-	// }
-	// if temp.Following_Id != "" {
-	// 	return u.Message(false, "You cannot follow yourself")
-	// }
 	err := GetDB().Table("").Where("follower_id = ? AND following_id = ?", follower, following).First(&Followings{}).Error
-	if err == gorm.ErrRecordNotFound {
+		if err == gorm.ErrRecordNotFound {
 		if err = GetDB().Create(&Followings{
 			Id:           u.GenerateUID(),
 			Following_Id: following,
